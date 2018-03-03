@@ -5,24 +5,32 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_account"
             android:icon="@drawable/ic_menu_camera"
-            android:title="My Account" />
+            android:title="Account" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_favourites"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Favourites" />
+        <item
+            android:id="@+id/nav_post"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="My Appointments" />
+            android:title="Post a Job" />
+        <item
+            android:id="@+id/nav_viewpost"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="View Jobs" />
 
     </group>
 
     <item android:title="Find Tradesmen">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_search"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Browse by Category" />
             <item
-                android:id="@+id/nav_contactus"
+                android:id="@+id/nav_maps"
                 android:icon="@android:drawable/ic_menu_mylocation"
                 android:title="Browse by Location" />
         </menu>

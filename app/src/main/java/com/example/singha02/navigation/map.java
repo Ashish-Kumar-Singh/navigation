@@ -32,10 +32,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Contactus extends Fragment implements OnMapReadyCallback {
+public class map extends Fragment implements OnMapReadyCallback {
 
 
-    public Contactus() {
+    public map() {
         // Required empty public constructor
     }
 

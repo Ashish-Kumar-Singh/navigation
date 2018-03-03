@@ -81,18 +81,35 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_share) {
-
-
-
-        } else if (id == R.id.nav_contactus) {
-            Contactus contactus=new Contactus();
+        if (id == R.id.nav_favourites) {
+            favourites fav= new favourites();
             FragmentManager manager= getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_relative,contactus ).commit();
+            manager.beginTransaction().replace(R.id.layout_relative, fav).commit();
+        }else if (id == R.id.nav_post) {
+            post post= new post();
+            FragmentManager manager= getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_relative, post).commit();
+        } else if (id == R.id.nav_viewpost) {
+            viewpost viewpost= new viewpost();
+            FragmentManager manager= getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_relative, viewpost).commit();
+        } else if (id == R.id.nav_search) {
+
+           search search= new search();
+            FragmentManager manager= getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_relative, search).commit();
+
+        }
+        else if (id == R.id.nav_account) {
+
+            account account= new account();
+            FragmentManager manager= getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_relative, account).commit();
+
+        }else if (id == R.id.nav_maps) {
+            map map =new map();
+            FragmentManager manager= getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_relative, map).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
