@@ -7,31 +7,24 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="My Account" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="My Appointments" />
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Find Tradesmen">
         <menu>
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Browse by Category" />
             <item
                 android:id="@+id/nav_contactus"
                 android:icon="@android:drawable/ic_menu_mylocation"
-                android:title="Browse" />
+                android:title="Browse by Location" />
         </menu>
     </item>
 
