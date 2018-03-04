@@ -1,9 +1,16 @@
 package com.example.singha02.navigation;
 
+import android.*;
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +23,9 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static final int REQUEST_CODE = 1;
+    private String TAG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,36 +94,60 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_favourites) {
             favourites fav= new favourites();
             FragmentManager manager= getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_relative, fav).commit();
+            manager.beginTransaction().replace(R.id.viewpager_container, fav).commit();
         }else if (id == R.id.nav_post) {
             post post= new post();
             FragmentManager manager= getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_relative, post).commit();
+            manager.beginTransaction().replace(R.id.viewpager_container, post).commit();
         } else if (id == R.id.nav_viewpost) {
             viewpost viewpost= new viewpost();
             FragmentManager manager= getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_relative, viewpost).commit();
+            manager.beginTransaction().replace(R.id.viewpager_container, viewpost).commit();
         } else if (id == R.id.nav_search) {
 
            search search= new search();
             FragmentManager manager= getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_relative, search).commit();
+            manager.beginTransaction().replace(R.id.viewpager_container, search).commit();
 
         }
         else if (id == R.id.nav_account) {
 
             account account= new account();
             FragmentManager manager= getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_relative, account).commit();
+            manager.beginTransaction().replace(R.id.viewpager_container, account).commit();
 
         }else if (id == R.id.nav_maps) {
             map map =new map();
             FragmentManager manager= getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_relative, map).commit();
+            manager.beginTransaction().replace(R.id.viewpager_container, map).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    //might get errors
+    private void verifyPermissions(){
+        Log.d(TAG, "verifyPermissions: asking user for permissions");
+        String[] permissions = {android.Manifest.permission.READ_EXTERNAL_STORAGE,
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA};
+
+        if(ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                permissions[0]) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                permissions[1]) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                permissions[2]) == PackageManager.PERMISSION_GRANTED){
+
+        }else{
+            ActivityCompat.requestPermissions(MainActivity.this,
+                    permissions,
+                    REQUEST_CODE);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        verifyPermissions();
     }
 }
