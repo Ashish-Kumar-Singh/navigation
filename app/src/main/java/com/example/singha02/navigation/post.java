@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 
 public class post extends Fragment{
     private static final String TAG= "Post";
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
