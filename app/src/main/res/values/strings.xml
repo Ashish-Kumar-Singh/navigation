@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">navigation</string>
+    <string name="app_name">Nexum(Beta)</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -17,7 +17,8 @@
     <string name="fragment_view">View Tradesmen</string>
     <string name="fragment_favourites">Favourites</string>
     <string name="fragment_maps">Maps</string>
-
+    <string name="fragment_view_post">Post</string>
+    <string name="fragment_account">Account</string>
 
     <!-- Dialog Names -->
     <string name="dialog_select_photo">SelectPhoto</string>
